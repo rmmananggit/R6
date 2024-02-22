@@ -14,54 +14,83 @@ include ("config.php");
 </head>
 <body>
 
-<h1 class="text-center">Insert Student Data</h1>
+<h1 class="text-center">Update Student Data</h1>
 <div class="container mt-4">
     <div class="row justify-content-center">
         <div class="col-lg-9">
-            <form action="">
+
+        <?php
+        if(isset($_GET['id']))
+        {
+            $id = $_GET['id'];
+            $users = "SELECT * FROM `user` WHERE `id` = '$id'";
+            $users_run = mysqli_query($con, $users);
+
+            if(mysqli_num_rows($users_run) > 0)
+            {
+                foreach($users_run as $user)
+                {
+                ?>
+
+            <form action="update.php" method="POST">
+
+            <input type="hidden" name="id" value="<?=$user['id'];?>">
+
                 <div class="row">
                     <div class="col-md-12 mb-3">
                         <label for="studentId" class="form-label">Student I.D</label>
-                        <input type="text" class="form-control" id="studentId">
+                        <input type="text" class="form-control" id="studentId" value="<?=$user['id'];?>" name="studentid">
                     </div>
 
                     <div class="col-md-4 mb-3">
                         <label for="firstName" class="form-label">First Name</label>
-                        <input type="text" class="form-control" id="firstName">
+                        <input type="text" class="form-control" id="firstName" name="firstName">
                     </div>
 
                     <div class="col-md-4 mb-3">
                         <label for="middlename" class="form-label">Middle Name</label>
-                        <input type="text" class="form-control" id="middlename">
+                        <input type="text" class="form-control" id="middlename" name="middlename">
                     </div>
 
                     <div class="col-md-4 mb-3">
                         <label for="lastName" class="form-label">Last Name</label>
-                        <input type="text" class="form-control" id="lastName">
+                        <input type="text" class="form-control" id="lastName" name="lastName">
                     </div>
 
                     <div class="col-md-4 mb-3">
                         <label for="dateOfBirth" class="form-label">Date of Birth</label>
-                        <input type="date" class="form-control" id="dateOfBirth">
+                        <input type="date" class="form-control" id="dateOfBirth" name="dateOfBirth">
                     </div>
 
                     <div class="col-md-4 mb-3">
                         <label for="email" class="form-label">Email Address</label>
-                        <input type="text" class="form-control" id="email">
+                        <input type="text" class="form-control" id="email" name="email">
                     </div>
 
                     <div class="col-md-4 mb-3">
-                        <label for="Phone Number" class="form-label">Phone Number</label>
-                        <input type="text" class="form-control" id="Phone Number">
+                        <label for="phoneNumber" class="form-label">Phone Number</label>
+                        <input type="text" class="form-control" id="phoneNumber" name="phoneNumber">
                     </div>
 
                     <div class="col-md-12 mb-3 text-center">
-                        <button type="submit" class="btn btn-primary"  style="float: right;">Submit</button>
+                        <button type="submit" class="btn btn-primary"  style="float: right;" name="submit">Submit</button>
                     </div>
                 </div>
             </form>
         </div>
     </div>
+
+    <?php
+                }
+            }
+            else
+            {
+                ?>
+                <h4>No Record Found!</h4>
+                <?php
+            }
+        }
+?>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
