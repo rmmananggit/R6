@@ -23,7 +23,7 @@ include ("config.php");
         if(isset($_GET['id']))
         {
             $id = $_GET['id'];
-            $users = "SELECT * FROM `user` WHERE `id` = '$id'";
+            $users = "SELECT * FROM `student` WHERE `id` = '$id'";
             $users_run = mysqli_query($con, $users);
 
             if(mysqli_num_rows($users_run) > 0)
@@ -39,7 +39,7 @@ include ("config.php");
                 <div class="row">
                     <div class="col-md-12 mb-3">
                         <label for="studentId" class="form-label">Student I.D</label>
-                        <input type="text" class="form-control" id="studentId" value="<?=$user['id'];?>" name="studentid">
+                        <input type="text" class="form-control" id="studentId" value="<?=$user['student_number'];?>" name="studentid">
                     </div>
 
                     <div class="col-md-4 mb-3">

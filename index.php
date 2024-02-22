@@ -26,12 +26,12 @@ include ("config.php");
               <table class="table datatable">
                 <thead>
                   <tr>
-                    <th scope="col">Name</th>
-                    <th scope="col">Birthday</th>
-                    <th scope="col">Email</th>
-                    <th scope="col">Phone Number</th>
-                    <th scope="col">Address</th>
-                    <th scope="col">Action</th>
+                    <th class="col">Name</th>
+                    <th class="col">Birthday</th>
+                    <th class="col">Email</th>
+                    <th class="col">Phone Number</th>
+                    <th class="col">Address</th>
+                    <th class="col">Action</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -52,7 +52,7 @@ include ("config.php");
                 <td><?= $row['phone_number']; ?></td>
                 <td><?= $row['address']; ?></td>
 
-                <td class="text-center">
+                <td>
 
                 <a type="button" class="btn btn-primary" href="view.php?id=<?=$row['id'];?>">VIEW</a>
                 <a type="button" class="btn btn-warning" href="update.php?id=<?=$row['id'];?>">UPDATE</a>
