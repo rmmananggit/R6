@@ -54,12 +54,12 @@ include ("config.php");
 
                 <td>
 
-                <a type="button" class="btn btn-primary" href="view.php?id=<?=$row['id'];?>">VIEW</a>
-                <a type="button" class="btn btn-warning" href="update.php?id=<?=$row['id'];?>">UPDATE</a>
+                <a type="button" class="btn btn-outline-primary" href="view.php?id=<?=$row['id'];?>">VIEW</a>
+                <a type="button" class="btn btn-outline-warning" href="update.php?id=<?=$row['id'];?>">UPDATE</a>
                 
                 <form action="process.php" method="POST">
                 <input type="hidden" name="id" value="<?= $row['id']; ?>">
-                <button type="submit" class="btn btn-danger">DELETE</button>
+                <button type="submit" class="btn btn-outline-danger">DELETE</button>
                 </form>
               </td>
                     </tr>
