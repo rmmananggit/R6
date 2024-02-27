@@ -13,3 +13,13 @@ height: calc(100% - 73px);
 height: 100%;
 }
 }
+    /* Start design in action label area */
+        td.action{
+            display:flex;
+        }
+
+        a,button.feature{
+            margin-left: 10px;
+        }
+    /* End design in action label area */
+
