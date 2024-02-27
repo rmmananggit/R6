@@ -1,6 +1,9 @@
-<?php session_start();
-include ("config.php");
-?>
+<!-- Start allowing to use config.php and the database to use -->
+    <?php session_start();
+        include ("config.php");
+    ?>
+<!-- End allowing to use config.php and the database to use -->
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -16,8 +19,8 @@ include ("config.php");
 <body>
 
 <h1 class="text-center">Insert Student Data</h1>
-<nav class="navigation";
-    <a href="index.php" >Home</a>
+<nav class="navigation">
+    <a href="index.php">Home</a>
     <h6>
         >
     </h6>

@@ -18,7 +18,6 @@ include ("config.php");
 <div class="container mt-4">
     <div class="row justify-content-center">
         <div class="col-lg-9">
-
         <?php
             if(isset($_GET['id']))
             {
@@ -63,7 +62,7 @@ include ("config.php");
 
                     <div class="col-md-4 mb-3">
                         <label for="email" class="form-label">Email Address</label>
-                        <input type="text" class="form-control" id="email" value="<?=$user['emailAddress'];?>" name="email">
+                        <input type="text" class="form-control" id="email" value="<?=$user['emailAddress'];?>" name="emailAddress">
                     </div>
 
                     <div class="col-md-4 mb-3">
@@ -78,18 +77,17 @@ include ("config.php");
             </form>
         </div>
     </div>
-
     <?php
                 }
             }
             else
             {
-                ?>
+    ?>
                 <h4>No Record Found!</h4>
-                <?php
+    <?php
             }
         }
-?>
+    ?>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
@@ -102,16 +100,16 @@ include ("config.php");
 
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <?php
-if (isset($_SESSION['status']) && $_SESSION['status_code'] != '' )
-{
-    ?>
+    if (isset($_SESSION['status']) && $_SESSION['status_code'] != '' )
+    {
+?>
     <script>
         swal({
             title: "<?php echo $_SESSION['status']; ?>",
             icon: "<?php echo $_SESSION['status_code']; ?>",
         });
     </script>
-    <?php
+<?php
     unset($_SESSION['status']);
     unset($_SESSION['status_code']);
 }

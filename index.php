@@ -28,7 +28,6 @@ include ("config.php");
                 <!-- Start display label -->
                   <thead>
                     <tr>
-                      <th class="col">ID</th>
                       <th class="col">Name</th>
                       <th class="col">Student ID</th>
                       <th class="col">Email</th>
@@ -57,7 +56,6 @@ include ("config.php");
                   <tr>
 
                     <!-- Start display of data in student table using table data  -->
-                      <td><?= $row['id']; ?></td>
                       <td><b><?= $row['firstName']; ?> <?= $row['middleName']; ?> <?= $row['lastName']; ?></b></td>
                       <td><?= $row['studentID']; ?></td>
                       <td><?= $row['emailAddress']; ?></td>
