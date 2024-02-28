@@ -1,16 +1,13 @@
 <?php
+    $host = "localhost";
+    $username = "root";
+    $password = "";
+    $database = "r6_activity";
 
-$host = "localhost";
-$username = "root";
-$password = "";
-$database = "activity";
+    $con = mysqli_connect("$host", "$username", "$password", "$database");
 
-$con = mysqli_connect("$host", "$username", "$password", "$database");
-
-if(!$con)
-{
-    die("". mysqli_connect_error());
-}
-
-
+    if(!$con)
+    {
+        die("". mysqli_connect_error());
+    }
 ?>
